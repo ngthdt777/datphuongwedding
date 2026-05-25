@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "simple-wedding-invitation/(.*)",
+      "destination": "simple-wedding-invitation/index.html"
     }
   ]
 }
