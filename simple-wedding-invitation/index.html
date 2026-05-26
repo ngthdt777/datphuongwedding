@@ -68,23 +68,22 @@
             <div class="navbar-end">
               <div class="navbar-item">
                 <a class="navbar-item" href="#Waktu">
-                  Waktu
+                  Thời gian
                 </a>
               </div>
               <div class="navbar-item">
                 <a class="navbar-item" href="#lokasi">
-                  Lokasi
+                  Địa điểm
                 </a>
               </div>
-              
               <div class="navbar-item">
                 <a class="navbar-item" href="#tentang-pasangan">
-                  Tentang CPW dan CPP
+                  Về Cô dâu và Chú rể
                 </a>
               </div>
               <div class="navbar-item">
                 <a class="navbar-item" href="#rsvp">
-                  RSVP
+                  Xác nhận tham dự
                 </a>
               </div>
             </div>
@@ -95,7 +94,11 @@
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="subtitle">Wedding Invitation</h1>
-            <h2 class="title">Thành Đạt & Thị Phương</h2>
+            <h2 class="title">
+              <span class="hero-title-part">Thanh Dat</span>
+              <span class="hero-title-part amp">&</span>
+              <span class="hero-title-part">Thi Phuong</span>
+            </h2>
             <h4 class="subtitle tempatwaktu">
               
                 Saturday, 28 November 2026 
@@ -125,14 +128,13 @@
               var month = now.getMonth() + 1;
               var year = now.getFullYear() + 1;
           
-              var nextyear = month + '/' + day + '/' + year + ' 07:07:07';
-              var harih = '03/21/2020 17:00:00';
+              var harih = '11/28/2026 17:00:00';
 
               $('#hitungmundur').countdown({
                 date: harih, // TODO Date format: 07/27/2017 17:00:00
                 offset: +7, // TODO Your Timezone Offset
-                day: 'Hari',
-                days: 'Hari'
+                day: 'Ngày',
+                days: 'Ngày'
               }, function () {
                 // Event notification disabled
               });
@@ -184,11 +186,12 @@
         </div> -->
 
         <p class="bodytext" data-aos="fade-up" data-aos-easing="linear">
-          Trân trọng kính mời [Quý bạn và Các vị] đến tham dự lễ thành hôn của chúng mình
+          Chúng mình tin rằng hạnh phúc không chỉ là khoảnh khắc về chung một nhà,
           <br>
-          Một chiếc thiệp nhỏ thay cho lời mời thật to
+          mà còn là được đón nhận sự yêu thương và chúc phúc từ những người thân quý.
           <br>
-          Hãy đến dự lễ cưới và lưu lại những khoảnh khắc đáng nhớ nhất cùng chúng mình nhé!
+          <br>
+          Trân trọng kính mời [Quí bạn và Các vị] đến chung vui cùng chúng mình trong ngày đặc biệt này.
         </p>
 
         <span class="space40px"></span>
@@ -445,9 +448,9 @@
                       </div>
                       <div class="column is-half">
                         <div class="field">
-                          <label class="label">Số người sẽ đến?</label>
+                          <label class="label">Số người tham dự</label>
                           <div class="control">
-                            <input class="input" type="number" name="guests" min="0" step="1" placeholder="0" required>
+                            <input class="input" id="guest-count" type="number" name="guests" min="0" step="1" placeholder="1" required>
                           </div>
                         </div>
                       </div>

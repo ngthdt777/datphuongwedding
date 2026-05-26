@@ -11,7 +11,7 @@
   transform: rotate(-3deg);
   font-size: 6rem;
   padding-bottom: 5px;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   color: whitesmoke;
 }
 
@@ -86,11 +86,14 @@ html {
   margin: 7px auto;
   height: 50px;
 }
+  .hero-body .title .hero-title-part:last-child {
+    white-space: nowrap;
+  }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop {
   line-height: 38px;
   font-weight: 600;
-  text-transform: ;
+  text-transform: 1px;
   letter-spacing: 1px;
   font-size: 1rem;
 }
@@ -256,7 +259,14 @@ html {
   padding: 80px;
 }
 
-.main-content .section-light.contact button {
+input[readonly] {
+  background-color: #e0e0e0;
+  color: #4a4a4a;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+..main-content .section-light.contact button {
   width: 100%;
   color: white;
   height: 50px;
@@ -269,6 +279,10 @@ html {
   .main-content .section-light.contact {
     padding: 80px 40px;
   }
+}
+
+.section-dark.contact .field.has-text-centered .field.is-grouped {
+  margin-top: 1rem;
 }
 
 .main-content .section-color.pertanyaan {
@@ -321,7 +335,7 @@ vertical-align: middle;
 
 .waktu {
   font-size: 1.4rem;
-  font-family: 'Raleway', sans-serif;
+  font-family: sans-serif;
 }
 
 .tanggal-angka {
@@ -652,4 +666,23 @@ body.preloader-site {
   vertical-align: middle;
   text-align: center;
   padding: 10px;
+}
+
+/* Responsive: stack hero title parts on small screens */
+.hero-body .title .hero-title-part {
+  display: inline;
+}
+.hero-body .title .hero-title-part.amp {
+  margin: 0 0.35rem;
+}
+@media (max-width: 400px) {
+  .hero-body .title .hero-title-part {
+    display: block;
+  }
+  .hero-body .title {
+    line-height: 1;
+  }
+  .hero-body .title .hero-title-part.amp {
+    margin: 0.15rem 0;
+  }
 }

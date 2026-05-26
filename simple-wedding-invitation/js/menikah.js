@@ -50,6 +50,24 @@ function scrollFunction() {
 $(document).ready(function($) {
   $(".preloader-wrapper").fadeOut();
   $("body").removeClass("preloader-site");
+
+  var $attendanceRadios = $("input[name='attendance']");
+  var $guestCount = $("#guest-count");
+
+  function updateGuestCount() {
+    var attendance = $("input[name='attendance']:checked").val();
+    if (attendance === "No") {
+      $guestCount.val(0).prop("readonly", true);
+    } else {
+      $guestCount.prop("readonly", false);
+      if (!$guestCount.val() || Number($guestCount.val()) === 0) {
+        $guestCount.val(1);
+      }
+    }
+  }
+
+  $attendanceRadios.on("change", updateGuestCount);
+  updateGuestCount();
 });
 $(window).load(function() {
   var Body = $("body");
