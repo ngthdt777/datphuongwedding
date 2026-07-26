@@ -39,10 +39,11 @@ window.onscroll = function() {
 };
 
 function scrollFunction() {
+  var toTopButton = document.getElementById("toTop");
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("toTop").style.display = "block";
+    toTopButton.classList.add("is-visible");
   } else {
-    document.getElementById("toTop").style.display = "none";
+    toTopButton.classList.remove("is-visible");
   }
 }
 

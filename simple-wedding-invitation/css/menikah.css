@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Raleway|Rouge+Script|Luxurious+Script");
 :root {
-  --cream-1: #F2E6D4; 
-  --cream-2: #f2e6d4b4; 
-  --cream-3: #f5ddb4;
-  --text-dark: #6B4C34; 
-  --text-light: #FFF9F0; 
+  --cream-1: #F2E6D4;
+  --cream-2: #f2e6d4b4;
+  --cream-3: #f8e8c2;
+  --text-dark: #6B4C34;
+  --text-light: #FFF9F0;
+  --accent: #996E6D;
+  --accent-alt: #BC8887;
+  --section-spacing: 80px 40px;
 }
 
 .has-vertically-aligned-content {
@@ -17,10 +20,22 @@
   font-family: 'Luxurious Script';
   font-weight: 100;
   transform: rotate(-3deg);
-  font-size: 6rem;
+  font-size: 8rem;
   padding-bottom: 5px;
   letter-spacing: 5px;
   color: whitesmoke;
+}
+
+@media (max-width: 768px) {
+  .hero .title {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero .title {
+    font-size: 5.5rem;
+  }
 }
 
 * {
@@ -71,17 +86,30 @@ html {
   font-family: sans-serif;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(231, 212, 180, 0.42) 0%,
+        rgba(246, 237, 224, 0.18) 100%
+      ),
+      url("/image/TIN_8457.jpg");
+    background-attachment: scroll;
+  }
+}
+
 
 .hero .subtitle {
   padding: 35px;
   color: whitesmoke;
   font-family: sans-serif;
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
 .hero .tempatwaktu {
   padding-top: 35px;
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
 .hero .hero-foot {
@@ -147,13 +175,95 @@ html {
 }
 
 .main-content .section-dark {
-  background-color: var(--cream-2);
-  padding: 80px 40px;
+  background-color: var(--cream-1);
+  padding: var(--section-spacing);
 }
 
 .main-content .section-darker {
+  background-color: #fff;
+  padding: var(--section-spacing);
+}
+
+#Waktu,
+#tentang-pasangan {
   background-color: var(--cream-1);
-  padding: 80px 40px;
+}
+
+#rsvp {
+  background-color: var(--cream-2);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#rsvp .section-title {
+  padding-bottom: 1.25rem;
+}
+
+#rsvp .subtitle {
+  margin-bottom: 1rem;
+}
+
+#rsvp .space40px {
+  height: 1.5rem;
+}
+
+#rsvp .divider {
+  margin: 1.25rem auto;
+  max-height: 50px;
+}
+
+#lokasi {
+  background-color: #fff;
+}
+
+#Waktu,
+#lokasi {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#Waktu .section-title,
+#lokasi .section-title {
+  padding-bottom: 1rem;
+}
+
+#lokasi .space40px {
+  height: 1.5rem;
+}
+
+@media (max-width: 599px) {
+  #Waktu,
+  #lokasi {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  #Waktu .section-title,
+  #lokasi .section-title {
+    padding-bottom: 0.75rem;
+  }
+
+  #lokasi .space40px {
+    height: 1rem;
+  }
+
+  #rsvp {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  #rsvp .section-title {
+    padding-bottom: 0.9rem;
+  }
+
+  #rsvp .space40px {
+    height: 1rem;
+  }
+
+  #rsvp .divider {
+    margin: 1rem auto;
+    max-height: 42px;
+  }
 }
 
 .main-content .section-dark.resume {
@@ -192,7 +302,7 @@ html {
 
 .main-content .section-cashbac {
   background-color: var(--cream-2);
-  padding: 80px 40px; 
+  padding: var(--section-spacing);
 }
 
 @media (max-width: 599px) {
@@ -223,11 +333,25 @@ html {
 }
 
 .main-content .section-light {
-  padding: 80px 40px;
+  padding: var(--section-spacing);
 }
 
 .main-content .section-light.regular-section {
-  padding-bottom: 80px;
+  padding-bottom: 1.5rem;
+}
+
+#tentang-pasangan .space40px {
+  height: 1rem;
+}
+
+@media (max-width: 599px) {
+  .main-content .section-light.regular-section {
+    padding-bottom: 1rem;
+  }
+
+  #tentang-pasangan .space40px {
+    height: 0.75rem;
+  }
 }
 
 .main-content .section-light.regular-section .is-larger {
@@ -279,7 +403,7 @@ input[readonly] {
   opacity: 0.7;
 }
 
-..main-content .section-light.contact button {
+.main-content .section-light.contact button {
   width: 100%;
   color: white;
   height: 50px;
@@ -317,7 +441,7 @@ input[readonly] {
 .main-content .section-title {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
-  color: #996E6D;
+  color: var(--accent);
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 1px;
@@ -325,21 +449,21 @@ input[readonly] {
 }
 
 .nama-lengkap {
-  font-family: 'sans-serif';
-  color: #996E6D;
+  font-family: sans-serif;
+  color: var(--accent);
   font-size: 3.5rem;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   padding-bottom: 6px;
   line-height: 3.7rem;
 }
 
 .ampersand {
-font-size: 5rem;
-font-family: 'Rouge Script', sans-serif;
-color: #996E6D;
-line-height: 5rem;
-display: inline-block;
-vertical-align: middle;
+  font-size: 5rem;
+  font-family: 'Rouge Script', sans-serif;
+  color: var(--accent);
+  line-height: 5rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .bodytext {
@@ -360,8 +484,8 @@ vertical-align: middle;
 
 .tempat {
   font-size: 1.4rem;
-  font-family:sans-serif;
-  font-size: 50;
+  font-family: sans-serif;
+  font-weight: 500;
   margin-bottom: 50px;
 }
 
@@ -377,7 +501,6 @@ vertical-align: middle;
   line-height: 25px;
   text-align: center;
   vertical-align: middle;
-  background: var(--cream-3);
   color: var(--text-dark);    
 }
 
@@ -410,10 +533,17 @@ vertical-align: middle;
 }
 
 .divider {
-  margin: 40px 25px;
-  display: inline-block;
+  display: block;
+  margin: 2rem auto;
   max-height: 60px;
-  vertical-align: middle;
+  width: auto;
+}
+
+@media (max-width: 599px) {
+  .divider {
+    margin: 1.25rem auto;
+    max-height: 48px;
+  }
 }
 
 .bismillah {
@@ -425,14 +555,14 @@ vertical-align: middle;
 }
 
 #toTop {
-  height: 50px;
-  width: 50px;
+  height: clamp(44px, 8vw, 56px);
+  width: clamp(44px, 8vw, 56px);
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  right: max(16px, env(safe-area-inset-right));
   z-index: 99;
   border: none;
   outline: none;
@@ -440,8 +570,20 @@ vertical-align: middle;
   color: var(--text-dark);
   cursor: pointer;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
   box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
+  transition: transform .2s ease, background-color .2s ease, opacity .2s ease, visibility .2s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+
+#toTop.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 #toTop i {
@@ -526,7 +668,6 @@ body.preloader-site {
 .btn-cta:hover {
   color: var(--text-dark);
   background-color: var(--cream-1);
-  border: 2px solid var(--cream-1);
   width:  210px;
   height: 65px;
   align-items: center;
@@ -534,8 +675,7 @@ body.preloader-site {
 }
 
 .btn-cta {
-  background-color: var(--cream-3);
-  border: 2px solid var(--cream-3);
+  background-color: var(--cream-1);
   color: var(--text-dark);
   width:  210px;
   height: 65px;
@@ -640,7 +780,7 @@ body.preloader-site {
 }
 
 .instagram {
-  color: #996E6D;
+  color: var(--accent);
   font-size: 1.25rem;
   font-weight: 900;
   margin-top: 0.5rem;
@@ -670,9 +810,49 @@ body.preloader-site {
 }
 
 #toTop span {
-  display: inline-block;
-  padding-bottom: 15px;
-  font-size: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-weight: 700;
   line-height: 1;
+}
+
+.section-dark.contact {
+  overflow: hidden;
+}
+
+.google-form-wrapper {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(14, 25, 80, 0.12);
+}
+
+.google-form-embed {
+  display: block;
+  width: 100%;
+  min-height: 1100px;
+  max-width: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .google-form-wrapper {
+    width: 100%;
+    margin: 0;
+    border-radius: 12px;
+  }
+
+  .google-form-embed {
+    min-height: 1020px;
+  }
+}
+
+@media (max-width: 480px) {
+  .google-form-embed {
+    min-height: 940px;
+  }
 }
