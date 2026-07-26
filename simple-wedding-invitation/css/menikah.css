@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Raleway|Rouge+Script|Luxurious+Script");
+:root {
+  --cream-1: #F2E6D4; 
+  --cream-2: #f2e6d4b4; 
+  --cream-3: #f5ddb4;
+  --text-dark: #6B4C34; 
+  --text-light: #FFF9F0; 
+}
+
 .has-vertically-aligned-content {
   display: flex;
   flex-direction: column;
@@ -32,27 +40,33 @@ html {
 .navbar-item {
   line-height: 38px;
   font-weight: 600;
-  text-transform: ;
   letter-spacing: 1px;
   font-size: 1rem;
-  box-shadow:  ;
 }
 
 .navbar-item.is-active{
-  border-bottom: 2px solid #996E6D;
+  border-bottom: 2px solid var(--cream-3);
 }
 
 .a.navbar-item{
-  font-color: #996E6D;
+  color: var(--text-dark);
 }
 
 
 .hero {
-  background-image: url(https://picsum.photos/id/25/1920/1080);
-  background: linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)), rgba(0, 0, 0, 0.55) url("https://picsum.photos/id/381/1920/1080") no-repeat;
-  background-attachment: fixed;
+  background-color: var(--cream-1);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(231, 212, 180, 0.42) 0%,
+      rgba(246, 237, 224, 0.18) 100%
+    ),
+    url("/image/TIN_8861.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  color: white;
+  background-attachment: fixed;
+  color: var(--text-light);
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-family: sans-serif;
 }
@@ -72,7 +86,7 @@ html {
 
 .hero .hero-foot {
   height: 50px;
-  background: white;
+  background: var(--cream-2);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.082);
 }
 
@@ -105,17 +119,16 @@ html {
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li.is-active a {
-  border-bottom: 2px solid #996E6D;
+  border-bottom: 2px solid var(--cream-3);
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a {
-  color: #996E6D;
+  color: var(--text-dark);
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a:hover {
-  color: #996E6D;
-  transition: all .2s ease-in-out;
-  border-bottom: 2px solid #c28285;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--cream-3);
 }
 
 
@@ -134,12 +147,12 @@ html {
 }
 
 .main-content .section-dark {
-  background-color: #F4E2E2;
+  background-color: var(--cream-2);
   padding: 80px 40px;
 }
 
 .main-content .section-darker {
-  background-color: #EDD2D1;
+  background-color: var(--cream-1);
   padding: 80px 40px;
 }
 
@@ -160,9 +173,9 @@ html {
 }
 
 .main-content .section-dark.resume button {
-  border: 2px solid #996E6D;
-  background: white;
-  color: #996E6D;
+  border: 2px solid var(--cream-3);
+  background: var(--cream-2);
+  color: var(--text-dark);
   height: 50px;
   width: 250px;
   font-size: 1rem;
@@ -170,7 +183,7 @@ html {
 }
 
 .main-content .section-dark.resume .fa-download {
-  color: #996E6D;
+  color: var(--text-dark);
 }
 
 .main-content .section-dark.my-work {
@@ -178,7 +191,7 @@ html {
 }
 
 .main-content .section-cashbac {
-  background-color: rgb(238, 250, 253);
+  background-color: var(--cream-2);
   padding: 80px 40px; 
 }
 
@@ -287,8 +300,8 @@ input[readonly] {
 
 .main-content .section-color.pertanyaan {
   padding: 100px;
-  background-color: #996E6D;
-  color: white;
+  background-color: var(--cream-3);
+  color: var(--text-dark);
 }
 
 .main-content .section-color.pertanyaan .title,
@@ -364,8 +377,8 @@ vertical-align: middle;
   line-height: 25px;
   text-align: center;
   vertical-align: middle;
-  background: #c28285;
-  color: whitesmoke;    
+  background: var(--cream-3);
+  color: var(--text-dark);    
 }
 
 .footer p {
@@ -414,19 +427,27 @@ vertical-align: middle;
 #toTop {
   height: 50px;
   width: 50px;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #996E6D;
-  color: white;
+  background-color: var(--cream-3);
+  color: var(--text-dark);
   cursor: pointer;
   border-radius: 50%;
   font-size: 2rem;
   box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
+}
+
+#toTop i {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--text-dark);
 }
 
 #toTop a {
@@ -434,18 +455,18 @@ vertical-align: middle;
 }
 
 #toTop:hover {
-  background-color: #BC8887;
+  background-color: var(--cream-1);
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: #F4E2E2;
+  background-color: var(--cream-2);
 }
 
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px #996E6D;
-  -webkit-box-shadow: inset 0 0 6px #996E6D;
-  background-color: #BC8887;
+  box-shadow: inset 0 0 6px var(--text-dark);
+  -webkit-box-shadow: inset 0 0 6px var(--text-dark);
+  background-color: var(--cream-1);
 }
 
 body.preloader-site {
@@ -455,7 +476,7 @@ body.preloader-site {
 .preloader-wrapper {
   height: 100%;
   width: 100%;
-  background: #D8A9A8;
+  background: var(--cream-1);
   position: fixed;
   top: 0;
   left: 0;
@@ -503,11 +524,9 @@ body.preloader-site {
 
 
 .btn-cta:hover {
-  color:white;
-  background-color: #bf7877;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  border: 2px solid #bf7877;
+  color: var(--text-dark);
+  background-color: var(--cream-1);
+  border: 2px solid var(--cream-1);
   width:  210px;
   height: 65px;
   align-items: center;
@@ -515,13 +534,11 @@ body.preloader-site {
 }
 
 .btn-cta {
-  background-color: #996E6D;
+  background-color: var(--cream-3);
+  border: 2px solid var(--cream-3);
+  color: var(--text-dark);
   width:  210px;
   height: 65px;
-  color: white;
-  font-size: 1.2rem;
-  border: 2px solid #996E6D;
-  border-radius: 10px;
   align-items: center;
   margin: 1rem;
 }
@@ -579,54 +596,19 @@ body.preloader-site {
 }
 
 
-.foto1 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/beatriz-perez-moya-M2T1j-6Fn8w-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
+.foto-card {
+  overflow: hidden;
+  padding: 0;
   min-height: 24rem;
+  position: relative;
 }
 
-
-.foto2 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/evelina-friman-hw_sKmjb0ns-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto3 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg");
-  background-size: cover;
-  background-position: top;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto4 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/jeremy-wong-weddings-K8KiCHh4WU4-unsplash.jpg");
-  background-size: cover;
-  background-position: top;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto5 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/nathan-dumlao-5BB_atDT4oA-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-
-.foto6 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/samantha-gades-x40Q9jrEVT0-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
+.foto-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 
@@ -685,4 +667,12 @@ body.preloader-site {
   .hero-body .title .hero-title-part.amp {
     margin: 0.15rem 0;
   }
+}
+
+#toTop span {
+  display: inline-block;
+  padding-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
 }
