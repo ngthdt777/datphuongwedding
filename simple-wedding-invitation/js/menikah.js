@@ -67,8 +67,49 @@ $(document).ready(function($) {
     }
   }
 
+  function normalizeGuestName(rawName) {
+    if (!rawName) {
+      return "";
+    }
+    var name = decodeURIComponent(rawName.replace(/\+/g, " "));
+    name = name.replace(/[-_]+/g, " ").trim();
+    name = name.replace(/([a-z])([A-Z])/g, "$1 $2");
+    return name;
+  }
+
+  function getGuestNameFromUrl() {
+    var path = window.location.pathname || "";
+    var segments = path.split("/").filter(function(segment) {
+      return segment !== "";
+    });
+    if (segments.length === 0) {
+      return "";
+    }
+    var lastSegment = segments[segments.length - 1];
+    if (lastSegment.toLowerCase() === "index.html" && segments.length > 1) {
+      lastSegment = segments[segments.length - 2];
+    }
+    if (!lastSegment || lastSegment.toLowerCase() === "index.html") {
+      return "";
+    }
+    return normalizeGuestName(lastSegment);
+  }
+
+  function fillGuestName() {
+    var guestName = getGuestNameFromUrl();
+    if (!guestName) {
+      return;
+    }
+    var $nameInput = $("input[name='name']");
+    if ($nameInput.length && !$nameInput.val().trim()) {
+      $nameInput.val(guestName);
+    }
+    $(".guest-name-placeholder").text(guestName);
+  }
+
   $attendanceRadios.on("change", updateGuestCount);
   updateGuestCount();
+  fillGuestName();
 });
 $(window).load(function() {
   var Body = $("body");
