@@ -73,7 +73,20 @@ $(document).ready(function($) {
     }
     var name = decodeURIComponent(rawName.replace(/\+/g, " "));
     name = name.replace(/[-_]+/g, " ").trim();
+    // Split on lower-to-upper boundaries and on upper-to-upper+lower boundaries.
     name = name.replace(/([a-z])([A-Z])/g, "$1 $2");
+    name = name.replace(/([A-Z])([A-Z][a-z])/g, "$1 $2");
+    name = name.replace(/\s+/g, " ").trim();
+    // Add a period to single-letter middle names, but not the first or last name if many names are present.
+    var parts = name.split(" ");
+    if (parts.length > 2) {
+      for (var i = 1; i < parts.length - 1; i++) {
+        if (parts[i].length === 1) {
+          parts[i] = parts[i] + ".";
+        }
+      }
+      name = parts.join(" ");
+    }
     return name;
   }
 
