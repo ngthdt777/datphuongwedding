@@ -668,10 +668,24 @@ body.preloader-site {
 .btn-cta:hover {
   color: var(--text-dark);
   background-color: var(--cream-1);
-  width:  210px;
-  height: 65px;
+  min-width: 140px;
+  height: 50px;
   align-items: center;
   margin: 1rem;
+}
+
+.btn-cta-small {
+  width: auto;
+  min-width: 140px;
+  height: 50px;
+  padding: 0 1.5rem;
+  font-weight: 700;
+}
+
+.btn-cta-small:hover {
+  color: var(--text-dark);
+  background-color: var(--cream-1);
+  box-shadow: none;
 }
 
 .btn-cta {
@@ -681,6 +695,14 @@ body.preloader-site {
   height: 65px;
   align-items: center;
   margin: 1rem;
+}
+
+.btn-cta-small {
+  width: auto;
+  min-width: 140px;
+  height: 50px;
+  padding: 0 1.5rem;
+  font-weight: 700;
 }
 
 .cashbac-logo-inline {

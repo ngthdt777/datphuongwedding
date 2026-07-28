@@ -128,6 +128,17 @@ $(document).ready(function($) {
     $("#thank-you-modal").removeClass("is-active");
   }
 
+  function updateThankYouMessage() {
+    var selectedAttendance = $(".attendance-radio:checked").val();
+    if (selectedAttendance === "Rất tiếc, tôi không thể tham dự") {
+      $("#thank-you-message").text("Thật đáng tiếc khi bạn không thể đến :( ");
+      $("#thank-you-subtext").text("Cảm ơn bạn đã thông báo. Chúc bạn nhiều sức khỏe!");
+    } else {
+      $("#thank-you-message").text("Đã gửi thông tin của bạn thành công.");
+      $("#thank-you-subtext").text("Chúng mình rất mong được gặp bạn trong ngày vui!");
+    }
+  }
+
   var $rsvpForm = $("#rsvp-form");
   $rsvpForm.on("submit", function(event) {
     event.preventDefault();
@@ -136,6 +147,7 @@ $(document).ready(function($) {
       alert('Form action is not configured. Update the form action and field names for Google Form submission.');
       return;
     }
+    updateThankYouMessage();
     this.submit();
     showThankYouModal();
     this.reset();
