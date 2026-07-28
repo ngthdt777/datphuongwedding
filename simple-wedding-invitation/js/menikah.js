@@ -131,11 +131,11 @@ $(document).ready(function($) {
   function updateThankYouMessage() {
     var selectedAttendance = $(".attendance-radio:checked").val();
     if (selectedAttendance === "Rất tiếc, tôi không thể tham dự") {
-      $("#thank-you-message").text("Thật đáng tiếc khi bạn không thể đến :( ");
-      $("#thank-you-subtext").text("Cảm ơn bạn đã thông báo. Chúc bạn nhiều sức khỏe!");
+      $("#thank-you-message").text("Thật đáng tiếc khi bạn không thể tham dự :( ");
+      $("#thank-you-subtext").text("Chúc bạn nhiều sức khỏe!");
     } else {
-      $("#thank-you-message").text("Đã gửi thông tin của bạn thành công.");
-      $("#thank-you-subtext").text("Chúng mình rất mong được gặp bạn trong ngày vui!");
+      $("#thank-you-message").text("Thông tin tham dự của bạn đã được ghi nhận.");
+      $("#thank-you-subtext").text("Chúng mình rất mong được gặp bạn!");
     }
   }
 
