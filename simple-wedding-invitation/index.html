@@ -379,25 +379,25 @@
                 </div> -->
               <div class="columns is-centered">
                 <div class="column is-10-tablet is-8-desktop">
-                  <form id="rsvp-form" action="#" method="POST" class="box">
+                  <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLScmvvLe8__DJgrq5YjMPYdpIYoMDIFXQ9M4XetUtiFHWpF5Iw/formResponse" method="POST" class="box">
                     <div class="field">
                       <label class="label">Họ và tên</label>
                       <div class="control">
-                        <input class="input" type="text" name="name" placeholder="Họ và tên của bạn" required>
+                        <input class="input" id="guest-name" type="text" name="entry.559352220" placeholder="Họ và tên của bạn" required>
                       </div>
                     </div>
 
                     <div class="field">
                       <label class="label">Email</label>
                       <div class="control">
-                        <input class="input" type="email" name="email" placeholder="you@example.com" required>
+                        <input class="input" id="guest-email" type="email" name="entry.443565211" placeholder="you@example.com" required>
                       </div>
                     </div>
 
                     <div class="field">
                       <label class="label">Số điện thoại</label>
                       <div class="control">
-                        <input class="input" type="tel" name="phone" placeholder="0945 123 456" required>
+                        <input class="input" id="guest-phone" type="tel" name="entry.994239041" placeholder="0945 123 456" required>
                       </div>
                     </div>
 
@@ -408,13 +408,13 @@
                           <div class="field is-grouped is-grouped-centered">
                             <div class="control" style="margin-right: 1.5rem;">
                               <label class="radio">
-                                <input type="radio" name="attendance" value="Yes" required>
+                                <input class="attendance-radio" type="radio" name="entry.877086558" value="Có, tôi sẽ tới đó" required>
                                 Tôi chắc chắn sẽ đi
                               </label>
                             </div>
                             <div class="control">
                               <label class="radio">
-                                <input type="radio" name="attendance" value="No">
+                                <input class="attendance-radio" type="radio" name="entry.877086558" value="Rất tiếc, tôi không thể tham dự">
                                 Tiếc quá tôi không thể
                               </label>
                             </div>
@@ -425,7 +425,7 @@
                         <div class="field">
                           <label class="label">Số người tham dự</label>
                           <div class="control">
-                            <input class="input" id="guest-count" type="number" name="guests" min="0" step="1" placeholder="1" required>
+                            <input class="input" id="guest-count" type="number" name="entry.924523986" min="0" step="1" placeholder="1" required>
                           </div>
                         </div>
                       </div>
@@ -433,7 +433,7 @@
                         <div class="field">
                           <label class="label">Lời chúc choa cô dâu chú rể</label>
                           <div class="control">
-                            <textarea class="textarea" name="wishes" placeholder="Viết lời chúc của bạn ở đây"></textarea>
+                            <textarea class="textarea" id="guest-wishes" name="entry.1751303409" placeholder="Viết lời chúc của bạn ở đây"></textarea>
                           </div>
                         </div>
                     <div class="field is-grouped is-grouped-centered">

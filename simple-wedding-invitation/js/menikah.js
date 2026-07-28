@@ -52,12 +52,12 @@ $(document).ready(function($) {
   $(".preloader-wrapper").fadeOut();
   $("body").removeClass("preloader-site");
 
-  var $attendanceRadios = $("input[name='attendance']");
+  var $attendanceRadios = $(".attendance-radio");
   var $guestCount = $("#guest-count");
 
   function updateGuestCount() {
-    var attendance = $("input[name='attendance']:checked").val();
-    if (attendance === "No") {
+    var attendance = $(".attendance-radio:checked").val();
+    if (attendance === "Rất tiếc, tôi không thể tham dự") {
       $guestCount.val(0).prop("readonly", true);
     } else {
       $guestCount.prop("readonly", false);
@@ -119,6 +119,20 @@ $(document).ready(function($) {
     }
     $(".guest-name-placeholder").text(guestName);
   }
+
+  window.submitToGoogleForm = function(form, event) {
+    event.preventDefault();
+    if (!form || !form.tagName || form.tagName.toLowerCase() !== 'form') {
+      console.error('submitToGoogleForm: invalid form element');
+      return;
+    }
+    var action = form.getAttribute('action');
+    if (!action || action === '#') {
+      alert('Form action is not configured. Update the form action and field names for Google Form submission.');
+      return;
+    }
+    form.submit();
+  };
 
   $attendanceRadios.on("change", updateGuestCount);
   updateGuestCount();
