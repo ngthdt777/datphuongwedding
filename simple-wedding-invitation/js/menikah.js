@@ -113,26 +113,37 @@ $(document).ready(function($) {
     if (!guestName) {
       return;
     }
-    var $nameInput = $("input[name='name']");
+    var $nameInput = $("#guest-name");
     if ($nameInput.length && !$nameInput.val().trim()) {
       $nameInput.val(guestName);
     }
     $(".guest-name-placeholder").text(guestName);
   }
 
-  window.submitToGoogleForm = function(form, event) {
+  function showThankYouModal() {
+    $("#thank-you-modal").addClass("is-active");
+  }
+
+  function hideThankYouModal() {
+    $("#thank-you-modal").removeClass("is-active");
+  }
+
+  var $rsvpForm = $("#rsvp-form");
+  $rsvpForm.on("submit", function(event) {
     event.preventDefault();
-    if (!form || !form.tagName || form.tagName.toLowerCase() !== 'form') {
-      console.error('submitToGoogleForm: invalid form element');
-      return;
-    }
-    var action = form.getAttribute('action');
-    if (!action || action === '#') {
+    var action = this.action;
+    if (!action || action === "#") {
       alert('Form action is not configured. Update the form action and field names for Google Form submission.');
       return;
     }
-    form.submit();
-  };
+    this.submit();
+    showThankYouModal();
+    this.reset();
+    updateGuestCount();
+    fillGuestName();
+  });
+
+  $("#thank-you-close, #thank-you-ok, #thank-you-modal .modal-background").on("click", hideThankYouModal);
 
   $attendanceRadios.on("change", updateGuestCount);
   updateGuestCount();

@@ -379,7 +379,8 @@
                 </div> -->
               <div class="columns is-centered">
                 <div class="column is-10-tablet is-8-desktop">
-                  <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLScmvvLe8__DJgrq5YjMPYdpIYoMDIFXQ9M4XetUtiFHWpF5Iw/formResponse" method="POST" class="box">
+                  <form id="rsvp-form" target="google-form-target" action="https://docs.google.com/forms/d/e/1FAIpQLScmvvLe8__DJgrq5YjMPYdpIYoMDIFXQ9M4XetUtiFHWpF5Iw/formResponse" method="POST" class="box">
+                    <iframe name="google-form-target" id="google-form-target" style="display:none;width:0;height:0;border:0;visibility:hidden;position:absolute;left:-9999px;"></iframe>
                     <div class="field">
                       <label class="label">Họ và tên</label>
                       <div class="control">
@@ -438,11 +439,27 @@
                         </div>
                     <div class="field is-grouped is-grouped-centered">
                       <div class="control">
-                        <button class="button is-primary is-medium" type="button" onclick="submitToGoogleForm(document.getElementById('rsvp-form'), event)">Gởi</button>
+                        <button class="button is-primary is-medium" type="submit">Gởi</button>
                       </div>
                     </div>
                     <p class="help has-text-centered">This RSVP form can be linked to a Google Form by updating the form action and field names.</p>
                   </form>
+                  <div id="thank-you-modal" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                      <header class="modal-card-head">
+                        <p class="modal-card-title">Cảm ơn bạn!</p>
+                        <button class="delete" aria-label="close" id="thank-you-close"></button>
+                      </header>
+                      <section class="modal-card-body has-text-centered">
+                        <p>Đã gửi thông tin của bạn thành công.</p>
+                        <p>Chúng mình rất mong được gặp bạn trong ngày vui!</p>
+                      </section>
+                      <footer class="modal-card-foot" style="justify-content:center;">
+                        <button class="button is-primary" id="thank-you-ok">Đóng</button>
+                      </footer>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="space40px"></div>
