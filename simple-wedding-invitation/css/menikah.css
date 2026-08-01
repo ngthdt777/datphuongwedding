@@ -539,6 +539,12 @@ input[readonly] {
 }
 
 @media (max-width: 599px) {
+  .anhcuoi {
+    height: 48px;
+  }
+}
+
+@media (max-width: 599px) {
   .divider {
     margin: 1.25rem auto;
     max-height: 48px;
