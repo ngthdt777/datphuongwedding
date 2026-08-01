@@ -99,7 +99,6 @@ html {
   }
 }
 
-
 .hero .subtitle {
   padding: 35px;
   color: whitesmoke;
@@ -773,7 +772,25 @@ body.preloader-site {
   object-position: center;
 }
 
+.foto-card--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 18rem;
+  background: linear-gradient(135deg, var(--cream-2), var(--cream-3));
+}
 
+.foto-card--placeholder .placeholder-label {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 249, 240, 0.85);
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 .title-foto {
   font-size: 18pt;
