@@ -1,6 +1,20 @@
 // Get that hamburger menu cookin' //
 
 document.addEventListener("DOMContentLoaded", function() {
+  var bgMusic = document.getElementById("bg-music");
+  if (bgMusic) {
+    bgMusic.volume = 0.4;
+
+    var playBgMusic = function() {
+      bgMusic.play().catch(function() {
+        // Browsers may block autoplay until the user interacts with the page.
+      });
+    };
+
+    playBgMusic();
+    document.addEventListener("click", playBgMusic, { once: true });
+  }
+
   // Get all "navbar-burger" elements
   var $navbarBurgers = Array.prototype.slice.call(
     document.querySelectorAll(".navbar-burger"),
